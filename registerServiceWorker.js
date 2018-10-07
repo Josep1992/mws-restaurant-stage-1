@@ -61,7 +61,16 @@ const assets = [
   self.addEventListener('fetch', (event) => {
     console.log('Service worker: Fetching');
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request)),
+      fetch(event.request)
+        .then((res) => {
+          // Make clone of response
+          const res_clone = res.clone();
+          caches.open(v1).then((cache) => {
+            cache.put(event.request, res_clone);
+          });
+          return res;
+        })
+        .catch(() => caches.match(event.request).then((res) => res)),
     );
   });
 })();
