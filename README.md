@@ -22,7 +22,7 @@ after you can start the project by running:
 npm start
 ```
 
-It will start the express server on port 5050(You can change this) and it will open a tab on port 5500 with live server.
+It will start the express server on port 3000(You can change this) and it will open a tab on port 5500 with live server.
 
 ```
 If you are having trouble with the server or app not starting when you run the npm start script try killing the ports with the command line.

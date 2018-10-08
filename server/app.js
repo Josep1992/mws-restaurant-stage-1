@@ -3,7 +3,7 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
-const port = 5050; // Change server port if needed
+const port = 3000; // Change server port if needed
 const json = require('./data/restaurants.json');
 
 app.use(bodyParser.json());
